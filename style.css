@@ -1,0 +1,303 @@
+/* ====== GLOBAL THEME ====== */
+:root {
+    --moto-red: #ff1e1e;
+    --moto-yellow: #ffd800;
+    --moto-dark: #05050a;
+    --moto-gray: #15151d;
+    --moto-light-gray: #262633;
+    --moto-accent: #00c8ff;
+    --moto-border: #3a3a4a;
+    --moto-text: #f5f5f5;
+    --moto-subtle: #b3b3c2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 0 0, #333 0, transparent 45%),
+        radial-gradient(circle at 100% 0, #444 0, transparent 45%),
+        linear-gradient(145deg, #05050a 0%, #000000 55%, #080814 100%);
+    color: var(--moto-text);
+    min-height: 100vh;
+    padding: 40px 12px 60px;
+}
+
+/* ====== TITLE ====== */
+
+h1 {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+    color: var(--moto-yellow);
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    margin-bottom: 28px;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 4px;
+    margin: 10px auto 0;
+    background: linear-gradient(90deg, var(--moto-red), var(--moto-yellow), var(--moto-accent));
+    border-radius: 999px;
+}
+
+/* ====== FORM CARD ====== */
+
+form {
+    margin: 0 auto 30px;
+    max-width: 420px;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.9));
+    padding: 22px 20px 18px;
+    border-radius: 18px;
+    border: 1px solid var(--moto-border);
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* small strip like racing livery */
+form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, transparent 0 18%, rgba(255, 255, 255, 0.08) 18% 20%, transparent 20% 100%);
+    pointer-events: none;
+}
+
+form input {
+    margin: 7px 0;
+    padding: 8px 12px;
+    width: 100%;
+    border-radius: 999px;
+    border: 1px solid var(--moto-border);
+    background: #05050a;
+    color: var(--moto-text);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, transform 0.1s ease;
+}
+
+form input::placeholder {
+    color: var(--moto-subtle);
+}
+
+form input:hover {
+    background: #080812;
+    transform: translateY(-1px);
+}
+
+form input:focus {
+    border-color: var(--moto-red);
+    box-shadow: 0 0 0 1px rgba(255, 30, 30, 0.6);
+}
+
+/* submit button */
+form input[type="submit"] {
+    margin-top: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-image: linear-gradient(135deg, var(--moto-red), #ff4b3a);
+    border: none;
+    box-shadow: 0 8px 18px rgba(255, 30, 30, 0.5);
+}
+
+form input[type="submit"]:hover {
+    background-image: linear-gradient(135deg, #ff4b3a, var(--moto-yellow));
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+    transform: translateY(-1px);
+}
+
+#error {
+    min-height: 18px;
+    margin-top: 4px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #ff4b4b !important;
+}
+
+/* ====== TABLE WRAPPER ====== */
+
+#ref {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(5, 5, 10, 0.7);
+    border-radius: 18px;
+    padding: 14px 10px 10px;
+    border: 1px solid var(--moto-border);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+    overflow-x: auto;
+}
+
+/* ====== TABLE ====== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #05050a 0%, #11111b 40%, #05050a 100%);
+}
+
+/* we don't have a <thead>, so style all cells and add zebra rows */
+
+td {
+    border: 1px solid #262636;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+    color: var(--moto-text);
+}
+
+/* header-like styling for first row to stand out */
+tr:first-child td {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: linear-gradient(90deg, rgba(255, 30, 30, 0.15), rgba(0, 0, 0, 0.6));
+    border-top: 2px solid var(--moto-red);
+}
+
+tr:nth-child(even):not(:first-child) {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+tr:nth-child(odd):not(:first-child) {
+    background: rgba(15, 15, 25, 0.75);
+}
+
+tr:hover td {
+    background: radial-gradient(circle at 0 50%, rgba(255, 30, 30, 0.25), rgba(0, 0, 0, 0.9));
+    transition: background 0.18s ease-out;
+}
+
+/* ====== BUTTONS (Delete / Edit) ====== */
+
+button {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    background: linear-gradient(135deg, #2b2b3b, #15151f);
+    color: var(--moto-text);
+    transition: transform 0.1s ease, box-shadow 0.18s ease, background 0.18s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, var(--moto-accent), #1f1f2b);
+    box-shadow: 0 8px 16px rgba(0, 200, 255, 0.4);
+}
+
+/* Bootstrap .btn-primary (Edit button) override to match MotoGP style */
+
+.btn-primary {
+    background-image: linear-gradient(135deg, var(--moto-red), #ff4b3a);
+    border: none;
+    box-shadow: 0 6px 14px rgba(255, 30, 30, 0.55);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-image: linear-gradient(135deg, #ff4b3a, var(--moto-yellow));
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.8);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #3a3a4a, #15151f);
+    border: none;
+    color: var(--moto-text);
+}
+
+/* ====== MODAL STYLING ====== */
+
+.modal-content {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.95));
+    border-radius: 18px;
+    border: 1px solid var(--moto-border);
+    color: var(--moto-text);
+}
+
+.modal-header {
+    border-bottom-color: #262636;
+    background: linear-gradient(90deg, rgba(255, 30, 30, 0.25), transparent);
+}
+
+.modal-title {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+}
+
+.modal-body.editBox {
+    margin: 6px auto 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.modal-body.editBox input {
+    flex: 1 1 48%;
+    border-radius: 999px;
+    border: 1px solid var(--moto-border);
+    background: #05050a;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--moto-text);
+}
+
+.modal-body.editBox input:focus {
+    border-color: var(--moto-accent);
+    box-shadow: 0 0 0 1px rgba(0, 200, 255, 0.6);
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.3rem;
+        letter-spacing: 0.18rem;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 18px 14px 14px;
+    }
+
+    #ref {
+        padding: 10px 6px 8px;
+        border-radius: 14px;
+    }
+
+    td {
+        padding: 8px 8px;
+        font-size: 0.82rem;
+    }
+
+    button {
+        padding: 4px 10px;
+        font-size: 0.72rem;
+    }
+}
