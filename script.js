@@ -114,9 +114,10 @@ function addTask(e){
     }
     motoArray.push(obj);
     display();
-    TeamTextBoxEle.value==""
-    RacerTextBoxEle.value==""
-    WinsCountTextBoxEle.value==""
+    TeamTextBoxEle.value="";
+    SponsorCompanyTextBoxEle.value="";
+    RacerTextBoxEle.value="";
+    WinsCountTextBoxEle.value="";
 }
 
 function removeError(e){
